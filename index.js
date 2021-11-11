@@ -24,7 +24,6 @@ async function run() {
 
           
         //   GET API
-
         app.get('/products', async(req, res) => {
           const cursor = productsCollection.find({});
           const products = await cursor.toArray();
