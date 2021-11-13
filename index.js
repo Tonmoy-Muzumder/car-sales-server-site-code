@@ -18,7 +18,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run() {
   try{
     await client.connect();
-    console.log('connect to db')
+    console.log('connected to db')
     const database = client.db("carSales");
           const productsCollection = database.collection("products");
 
