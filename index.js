@@ -39,6 +39,15 @@ async function run() {
          res.json(result)
       });
 
+
+      // GET SINGLE PRODUCT
+      app.get('/products/:id', async(req, res) => {
+        const id = req.params.id;
+        const query = {_id:ObjectId(id)};
+        const product = await productsCollection.findOne(query);
+        res.json(product);
+    });
+
   }finally{
     // await client.close();
   }
