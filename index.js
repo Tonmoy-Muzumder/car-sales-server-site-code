@@ -63,14 +63,14 @@ async function run() {
         const product = await productsCollection.findOne(query);
         res.json(product);
     });
-
+// user collection post
     app.post('/users', async (req, res) => {
       const user = req.body;
       const result = await usersCollection.insertOne(user);
       console.log(result);
       res.json(result);
   });
-
+// user Update
   app.put('/users', async (req, res) => {
     const user = req.body;
     const filter = { email: user.email };
